@@ -35,3 +35,17 @@ jobs:
 
       - name: Run checks
         run: npm run check
+
+      - name: Smoke test fresh package installation
+        run: |
+          install_dir=$(mktemp -d)
+          archive=$(npm pack --pack-destination "$install_dir" --silent)
+          npm install --prefix "$install_dir" --omit=dev --ignore-scripts "$install_dir/$archive"
+          cd "$install_dir"
+          node --input-type=module <<'JS'
+          import { createRequire } from "node:module";
+          const require = createRequire(import.meta.resolve("oc-mr"));
+          const { Effect } = await import(require.resolve("effect"));
+          const { NodeServices } = await import(require.resolve("@effect/platform-node"));
+          await Effect.runPromise(Effect.void.pipe(Effect.provide(NodeServices.layer)));
+          JS
