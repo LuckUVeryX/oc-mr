@@ -1,6 +1,6 @@
 import type { AbsolutePath } from "@opencode/schema";
 import { Context, Data, Effect, Layer, Schema, Stream } from "effect";
-import { ChildProcess, ChildProcessSpawner } from "effect/unstable/process";
+import { ChildProcess, ChildProcessSpawner } from "effect/process";
 
 const MergeRequestsJson = Schema.fromJsonString(
   Schema.Array(

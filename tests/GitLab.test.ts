@@ -1,7 +1,7 @@
 import { describe, expect, it } from "@effect/vitest";
 import { AbsolutePath } from "@opencode/schema";
 import { Effect, Layer, Sink, Stream } from "effect";
-import { ChildProcess, ChildProcessSpawner } from "effect/unstable/process";
+import { ChildProcess, ChildProcessSpawner } from "effect/process";
 import { CommandFailed, GitLab, MergeRequestNotFound } from "../src/GitLab.js";
 
 const completedProcess = (stdout: string, stdErr = "", exitCode = 0) => {

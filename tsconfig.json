@@ -43,7 +43,8 @@
     "skipLibCheck": true,
     "plugins": [
       {
-        "name": "@effect/language-service"
+        "name": "@effect/language-service",
+        "allowedUnstableApis": ["effect/process"]
       }
     ]
   }

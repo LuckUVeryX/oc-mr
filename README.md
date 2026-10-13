@@ -10,7 +10,7 @@ It does not create or modify merge requests. GitHub pull requests are not suppor
 
 ## Requirements
 
-- OpenCode V2; this project uses `@opencode/plugin` 2.0.24 or later in the V2 series.
+- OpenCode 2.0.27 or later in the V2 series, with a compatible Effect 4.0.1 runtime.
 - [Git](https://git-scm.com/) and [GitLab CLI (`glab`)](https://gitlab.com/gitlab-org/cli)
   available on the OpenCode service's `PATH`.
 - A local Git checkout on a branch, with a GitLab remote and an existing MR.
